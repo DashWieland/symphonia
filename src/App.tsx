@@ -47,12 +47,12 @@ const SurrealSlider = memo(function SurrealSlider({
   return (
     <div className="mb-3">
       <div className="flex justify-between items-baseline mb-1">
-        <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color }}>
+        <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase" style={{ color }}>
           {label}
         </span>
-        <span className="text-[10px] text-neutral-500 font-mono">{Math.round(pct)}</span>
+        <span className="text-[10px] md:text-xs text-neutral-500 font-mono">{Math.round(pct)}</span>
       </div>
-      <div className="text-[9px] text-neutral-600 mb-1 italic">{sublabel}</div>
+      <div className="text-[9px] md:text-[11px] text-neutral-600 mb-1 italic">{sublabel}</div>
       <div className="relative h-8 group cursor-default" style={{ touchAction: "none" }}>
         <div className="absolute inset-y-1 inset-x-0 rounded-sm bg-neutral-900 border border-neutral-800" />
         <div
@@ -107,8 +107,8 @@ const DirectorSlider = memo(function DirectorSlider({
   return (
     <div>
       <div className="flex justify-between items-baseline mb-2">
-        <span className="text-[10px] font-bold tracking-widest uppercase text-neutral-500">{leftLabel}</span>
-        <span className="text-[10px] font-bold tracking-widest uppercase text-neutral-500">{rightLabel}</span>
+        <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-neutral-500">{leftLabel}</span>
+        <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-neutral-500">{rightLabel}</span>
       </div>
       <div className="relative">
         <div className="absolute inset-y-0 left-1/2 w-px bg-neutral-800 -translate-x-px" />
@@ -121,7 +121,7 @@ const DirectorSlider = memo(function DirectorSlider({
           className={DIRECTOR_SLIDER_CLASS}
         />
       </div>
-      <p className="text-[9px] text-neutral-700 mt-1 text-center italic">
+      <p className="text-[9px] md:text-[11px] text-neutral-700 mt-1 text-center italic">
         {value < -0.3 ? lowText : value > 0.3 ? highText : midText}
       </p>
     </div>
@@ -2574,12 +2574,12 @@ function Groovebox() {
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div className="shrink-0">
             <h1
-              className="text-lg font-bold tracking-[0.3em] uppercase font-['Share_Tech_Mono',monospace]"
+              className="text-lg md:text-3xl font-bold tracking-[0.3em] uppercase font-['Share_Tech_Mono',monospace]"
               style={{ color: colorScheme.glow, textShadow: `0 0 20px ${colorScheme.glow}44` }}
             >
               SYMPHONIA
             </h1>
-            <div className="text-[10px] text-neutral-600 tracking-[0.15em] flex items-center gap-0">
+            <div className="text-[10px] md:text-sm text-neutral-600 tracking-[0.15em] flex items-center gap-0">
               {isOnCanvas ? (
                 isEditingCanvasName ? (
                   <input
@@ -2629,35 +2629,35 @@ function Groovebox() {
               <button
                 type="button"
                 onClick={() => setAppView("radial")}
-                className={`px-2 py-1 rounded text-[9px] font-bold tracking-wider uppercase cursor-default transition-all ${
+                className={`px-2 py-1 rounded text-[9px] md:text-xs font-bold tracking-wider uppercase cursor-default transition-all ${
                   appView === "radial" ? "bg-cyan-900/50 text-cyan-400" : "text-neutral-600 hover:text-neutral-400"
                 }`}
                 title="Radial visual interface — touch to play"
               >
                 <span className="block leading-tight">RADIAL</span>
-                <span className={`block text-[7px] font-normal tracking-normal normal-case ${appView === "radial" ? "text-cyan-500/60" : "text-neutral-700"}`}>touch</span>
+                <span className={`block text-[7px] md:text-[9px] font-normal tracking-normal normal-case ${appView === "radial" ? "text-cyan-500/60" : "text-neutral-700"}`}>touch</span>
               </button>
               <button
                 type="button"
                 onClick={() => setAppView("classic")}
-                className={`px-2 py-1 rounded text-[9px] font-bold tracking-wider uppercase cursor-default transition-all ${
+                className={`px-2 py-1 rounded text-[9px] md:text-xs font-bold tracking-wider uppercase cursor-default transition-all ${
                   appView === "classic" ? "bg-neutral-700 text-white" : "text-neutral-600 hover:text-neutral-400"
                 }`}
                 title="Traditional sliders, grid, and piano roll"
               >
                 <span className="block leading-tight">CLASSIC</span>
-                <span className={`block text-[7px] font-normal tracking-normal normal-case ${appView === "classic" ? "text-neutral-400" : "text-neutral-700"}`}>grid</span>
+                <span className={`block text-[7px] md:text-[9px] font-normal tracking-normal normal-case ${appView === "classic" ? "text-neutral-400" : "text-neutral-700"}`}>grid</span>
               </button>
               <button
                 type="button"
                 onClick={() => setAppView("director")}
-                className={`px-2 py-1 rounded text-[9px] font-bold tracking-wider uppercase cursor-default transition-all ${
+                className={`px-2 py-1 rounded text-[9px] md:text-xs font-bold tracking-wider uppercase cursor-default transition-all ${
                   appView === "director" ? "bg-amber-900/50 text-amber-400" : "text-neutral-600 hover:text-neutral-400"
                 }`}
                 title="Shape the sound with personality"
               >
                 <span className="block leading-tight">DIRECTOR</span>
-                <span className={`block text-[7px] font-normal tracking-normal normal-case ${appView === "director" ? "text-amber-500/60" : "text-neutral-700"}`}>mood</span>
+                <span className={`block text-[7px] md:text-[9px] font-normal tracking-normal normal-case ${appView === "director" ? "text-amber-500/60" : "text-neutral-700"}`}>mood</span>
               </button>
             </div>
             <button
@@ -2693,7 +2693,7 @@ function Groovebox() {
                 type="button"
                 onClick={handleExportWav}
                 disabled={isExportingAudio}
-                className={`flex items-center gap-1 px-2.5 py-2 rounded text-[10px] font-bold tracking-wider uppercase cursor-default min-h-[40px] transition-all ${
+                className={`flex items-center gap-1 px-2.5 py-2 rounded text-[10px] md:text-xs font-bold tracking-wider uppercase cursor-default min-h-[40px] transition-all ${
                   isExportingAudio
                     ? "bg-amber-900/40 text-amber-400 border border-amber-700/50 animate-pulse"
                     : "bg-neutral-800 hover:bg-neutral-700 text-neutral-300"
@@ -2706,7 +2706,7 @@ function Groovebox() {
               <button
                 type="button"
                 onClick={handleExportMidi}
-                className="flex items-center gap-1 px-2.5 py-2 rounded bg-neutral-800 hover:bg-neutral-700 text-neutral-300 text-[10px] font-bold tracking-wider uppercase cursor-default min-h-[40px] transition-all"
+                className="flex items-center gap-1 px-2.5 py-2 rounded bg-neutral-800 hover:bg-neutral-700 text-neutral-300 text-[10px] md:text-xs font-bold tracking-wider uppercase cursor-default min-h-[40px] transition-all"
                 title="Export drums & melody as MIDI file"
               >
                 <Download size={13} />
@@ -2715,7 +2715,7 @@ function Groovebox() {
               <button
                 type="button"
                 onClick={handleShare}
-                className={`flex items-center gap-1 px-2.5 py-2 rounded text-[10px] font-bold tracking-wider uppercase cursor-default min-h-[40px] transition-all ${
+                className={`flex items-center gap-1 px-2.5 py-2 rounded text-[10px] md:text-xs font-bold tracking-wider uppercase cursor-default min-h-[40px] transition-all ${
                   shareStatus === "copied"
                     ? "bg-green-900/50 text-green-400 border border-green-700/50"
                     : "bg-neutral-800 hover:bg-neutral-700 text-neutral-300"
@@ -2755,12 +2755,12 @@ function Groovebox() {
       {/* ── Intro / Visualizer ── */}
       {hasEverPlayed.current ? (
         <div className="px-4 pt-3">
-          <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-600 mb-1.5 px-1">SIGNAL</div>
+          <div className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-neutral-600 mb-1.5 px-1">SIGNAL</div>
           <Visualizer engine={engine} isPlaying={isPlaying} colorScheme={colorScheme} />
         </div>
       ) : (
         <div className="px-4 pt-4 pb-1">
-          <p className="text-sm text-neutral-400 leading-relaxed max-w-lg">
+          <p className="text-sm md:text-lg text-neutral-400 leading-relaxed max-w-lg">
             A groovebox for making strange, beautiful music.
             <span className="text-neutral-500"> Pick a preset below, then </span>
             <span className="text-white font-bold">hit play</span>
@@ -2798,7 +2798,7 @@ function Groovebox() {
 
           {/* Tempo */}
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-neutral-500 tracking-wider uppercase">BPM</span>
+            <span className="text-[10px] md:text-xs text-neutral-500 tracking-wider uppercase">BPM</span>
             <input
               type="range"
               min={30}
@@ -2809,7 +2809,7 @@ function Groovebox() {
               aria-label="Tempo in BPM"
               className="transport-slider w-20"
             />
-            <span className="text-xs font-mono text-neutral-400 w-7 text-right">{pattern.tempo}</span>
+            <span className="text-xs md:text-sm font-mono text-neutral-400 w-7 md:w-9 text-right">{pattern.tempo}</span>
           </div>
 
           {/* Master volume */}
@@ -2846,7 +2846,7 @@ function Groovebox() {
         {/* Secondary row: Swing, Scale, Randomize */}
         <div className="flex items-center gap-3 flex-wrap">
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-neutral-500 tracking-wider uppercase">SWING</span>
+            <span className="text-[10px] md:text-xs text-neutral-500 tracking-wider uppercase">SWING</span>
             <input
               type="range"
               min={0}
@@ -2875,7 +2875,7 @@ function Groovebox() {
           )}
 
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-neutral-500 tracking-wider uppercase">SCALE</span>
+            <span className="text-[10px] md:text-xs text-neutral-500 tracking-wider uppercase">SCALE</span>
             <select
               value={pattern.scale}
               onChange={(e) => setPattern(prev => ({ ...prev, scale: e.target.value }))}
@@ -2888,7 +2888,7 @@ function Groovebox() {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-neutral-500 tracking-wider uppercase">RANDOMIZE</span>
+            <span className="text-[10px] md:text-xs text-neutral-500 tracking-wider uppercase">RANDOMIZE</span>
             <select
               value={randomTarget}
               onChange={(e) => setRandomTarget(e.target.value as typeof randomTarget)}
@@ -2920,7 +2920,7 @@ function Groovebox() {
             key="canvas-btn"
             type="button"
             onClick={() => { if (!isOnCanvas) goToCanvas(); }}
-            className={`px-3 py-1.5 rounded text-[11px] font-bold tracking-wider uppercase border transition-all cursor-default ${
+            className={`px-3 py-1.5 rounded text-[11px] md:text-sm font-bold tracking-wider uppercase border transition-all cursor-default ${
               isOnCanvas
                 ? "border-white/30 text-white"
                 : scratchpadRef.current
@@ -2942,7 +2942,7 @@ function Groovebox() {
               key={preset.name}
               type="button"
               onClick={() => { if (activePreset !== preset.name) selectPreset(preset.name); }}
-              className={`px-3 py-1.5 rounded text-[11px] font-bold tracking-wider uppercase border transition-all cursor-default ${
+              className={`px-3 py-1.5 rounded text-[11px] md:text-sm font-bold tracking-wider uppercase border transition-all cursor-default ${
                 activePreset === preset.name
                   ? "border-white/30 text-white"
                   : "bg-neutral-800/50 border-neutral-700 text-neutral-400 hover:text-neutral-200 hover:border-neutral-600 hover:bg-neutral-800"
@@ -2977,7 +2977,7 @@ function Groovebox() {
       {appView === "radial" && (<>
         {(showHints || !isPlaying) && (
           <div className="px-4 pb-2">
-            <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-neutral-500 font-mono tracking-wide">
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] md:text-xs text-neutral-500 font-mono tracking-wide">
               <span><span className="text-neutral-400">center</span> drag handles to shape effects</span>
               <span><span className="text-neutral-400">flowers</span> tap petals to toggle, drag to set volume</span>
               <span><span className="text-neutral-400">outer ring</span> tap nodes to toggle, drag to change pitch</span>
@@ -3367,7 +3367,7 @@ function Groovebox() {
         <div className="px-4 py-6 max-w-lg mx-auto">
           {showHints && (
             <div className="pb-3">
-              <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-neutral-500 font-mono tracking-wide">
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] md:text-xs text-neutral-500 font-mono tracking-wide">
                 <span><span className="text-neutral-400">sliders</span> each axis blends two extremes</span>
                 <span><span className="text-neutral-400">center</span> = preset default</span>
               </div>
@@ -3450,7 +3450,7 @@ function Groovebox() {
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
           onClick={(e) => { if (e.target === e.currentTarget) { setShowGuide(false); try { localStorage.setItem("symphonia-guided", "1"); } catch {} } }}
         >
-          <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 w-full max-w-md max-h-[85vh] overflow-y-auto relative">
+          <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 w-full max-w-lg max-h-[85vh] overflow-y-auto relative">
             <button
               type="button"
               onClick={() => { setShowGuide(false); try { localStorage.setItem("symphonia-guided", "1"); } catch {} }}
@@ -3458,34 +3458,34 @@ function Groovebox() {
             >
               &times;
             </button>
-            <h2 className="text-sm font-bold tracking-[0.3em] uppercase mb-4 font-['Share_Tech_Mono',monospace]" style={{ color: colorScheme.glow }}>
+            <h2 className="text-xl font-bold tracking-[0.3em] uppercase mb-4 font-['Share_Tech_Mono',monospace]" style={{ color: colorScheme.glow }}>
               How to Play
             </h2>
-            <div className="space-y-3 text-[11px] text-neutral-400 leading-snug">
+            <div className="space-y-4 text-base text-neutral-400 leading-relaxed">
               <div>
-                <span className="text-[10px] font-bold tracking-wider uppercase" style={{ color: colorScheme.accent }}>1. Pick a preset </span>
+                <span className="text-sm font-bold tracking-wider uppercase" style={{ color: colorScheme.accent }}>1. Pick a preset </span>
                 Each preset sets the mood — tempo, scale, rhythm, and effects. Tap one to start.
               </div>
               <div>
-                <span className="text-[10px] font-bold tracking-wider uppercase" style={{ color: colorScheme.accent }}>2. Hit play </span>
+                <span className="text-sm font-bold tracking-wider uppercase" style={{ color: colorScheme.accent }}>2. Hit play </span>
                 Press the play button or spacebar. The pattern loops and the visuals come alive.
               </div>
               <div>
-                <span className="text-[10px] font-bold tracking-wider uppercase" style={{ color: colorScheme.accent }}>3. Shape the sound </span>
+                <span className="text-sm font-bold tracking-wider uppercase" style={{ color: colorScheme.accent }}>3. Shape the sound </span>
                 <strong className="text-neutral-300">Radial:</strong> Drag the center blob to warp effects. Tap flower petals for drums. Tap/drag the outer ring for melody.
               </div>
               <div>
-                <span className="text-[10px] font-bold tracking-wider uppercase" style={{ color: colorScheme.accent }}>4. Go deeper </span>
+                <span className="text-sm font-bold tracking-wider uppercase" style={{ color: colorScheme.accent }}>4. Go deeper </span>
                 <strong className="text-neutral-300">Classic</strong> gives you a grid sequencer. <strong className="text-neutral-300">Director</strong> lets you shape the sound with personality sliders.
               </div>
-              <div className="border-t border-neutral-800 pt-2 text-neutral-500">
+              <div className="border-t border-neutral-800 pt-2 text-sm text-neutral-500">
                 <span className="text-neutral-300">Space</span> play/stop &nbsp; <span className="text-neutral-300">?</span> hints &nbsp; <span className="text-neutral-300">Ctrl+Z</span> undo &nbsp; <span className="text-neutral-300">Long-press</span> accent
               </div>
             </div>
             <button
               type="button"
               onClick={() => { setShowGuide(false); try { localStorage.setItem("symphonia-guided", "1"); } catch {} }}
-              className="w-full mt-5 py-2.5 rounded font-bold text-sm tracking-wider uppercase cursor-default transition-all"
+              className="w-full mt-5 py-3 rounded font-bold text-base tracking-wider uppercase cursor-default transition-all"
               style={{ backgroundColor: colorScheme.accent }}
             >
               Got it
