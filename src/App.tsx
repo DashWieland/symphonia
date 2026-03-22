@@ -2770,7 +2770,9 @@ function Groovebox() {
               onClick={() => setAppView("classic")}
               className="text-neutral-300 underline underline-offset-2 cursor-default"
             >classic view</button>
-            <span className="text-neutral-500"> for a grid sequencer.</span>
+            <span className="text-neutral-500"> for a grid sequencer. Built by </span>
+            <a href="https://www.apophenia.blog/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-neutral-200 underline underline-offset-2 transition-colors">Dash Wieland</a>
+            <span className="text-neutral-500">.</span>
           </p>
         </div>
       )}
@@ -3442,6 +3444,10 @@ function Groovebox() {
           How to play
         </button>
         <span className="text-[9px] text-neutral-700 tracking-wider">space = play/stop &nbsp; ctrl+z = undo</span>
+        <span className="text-[9px] text-neutral-700 tracking-wider">
+          Built by{" "}
+          <a href="https://www.apophenia.blog/" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-neutral-300 underline underline-offset-2 transition-colors">Dash Wieland</a>
+        </span>
       </div>
 
       {/* ── Welcome Guide ── */}
